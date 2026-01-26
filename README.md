@@ -17,8 +17,8 @@ API rodando em http://localhost:3001
 
 🛠️ Instalação  
 Clone o repositório:  
-git clone git@github.com:SEU_USUARIO/music-and-magic-frontend.git  
-cd music-and-magic-frontend
+git clone git@github.com:GabeGreison/musica-e-magia.git  
+cd musica-e-magia
 
 Instale as dependências:  
 npm install
