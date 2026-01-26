@@ -1,15 +1,25 @@
-import { mockPosts } from "@/src/lib/mockPosts";
+import { fetchAPI } from "@/src/lib/apiClient";
+import { Post } from "@/src/types";
 
 type PostPageProps = { params: { slug: string } | Promise<{ slug: string }> };
 
+export async function fetchPost(slug: string): Promise<Post | null> {
+  try {
+    return await fetchAPI<Post>(`/posts/${slug}`);
+  } catch (error) {
+    console.error("Erro ao buscar post:", error);
+    return null;
+  }
+}
+
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params;
-  const post = mockPosts.find((p) => p.slug === slug);
+  const post = await fetchPost(slug);
 
   if (!post) {
     return (
       <main className="max-w-3xl mx-auto px-6 py-12">
-        <p className="text-zinc-600 dark:text-zinc-400">Post não encontrado.</p>
+        <p className="text-zinc-600">Post não encontrado.</p>
       </main>
     );
   }
