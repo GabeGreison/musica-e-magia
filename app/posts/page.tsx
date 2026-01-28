@@ -12,11 +12,11 @@ export default async function PostsPage() {
   }
 
   return (
-    <main className="max-w-5xl mx-auto px-6 py-12">
+    <main className="max-w-5xl mx-auto px-6 py-14">
       {posts.length === 0 ? (
-        <p className="text-zinc-600">Nenhum post encontrado.</p>
+        <p className="text-zinc-400">Nenhum post encontrado.</p>
       ) : (
-        <section className="space-y-12">
+        <section className="space-y-14">
           {posts.map((post) => {
             const publishedDate = new Date(
               post.published_at,
@@ -28,14 +28,25 @@ export default async function PostsPage() {
                 href={`/posts/${post.slug}`}
                 className="block group"
               >
-                <article className="border-l-4 border-emerald-700 pl-6">
-                  <h2 className="text-2xl font-semibold tracking-tight text-zinc-900 group-hover:text-emerald-700 transition-colors">
+                <article className="relative pl-7 border-l border-zinc-800">
+                  <h2
+                    className="
+                      text-2xl
+                      font-medium
+                      tracking-tight
+                      text-zinc-100
+                      transition-colors
+                      group-hover:text-emerald-400
+                    "
+                  >
                     {post.title}
                   </h2>
-                  <p className="mt-2 text-zinc-700 leading-relaxed max-w-3xl">
+
+                  <p className="mt-2 text-zinc-400 leading-relaxed max-w-3xl">
                     {post.summary}
                   </p>
-                  <time className="block mt-3 text-xs uppercase tracking-widest text-zinc-500">
+
+                  <time className="block mt-3 text-xs tracking-wider uppercase text-zinc-500">
                     {publishedDate}
                   </time>
                 </article>

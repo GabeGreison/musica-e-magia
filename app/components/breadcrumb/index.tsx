@@ -16,17 +16,18 @@ export default function Breadcrumb() {
   }));
 
   return (
-    <nav className="text-sm max-w-5xl mx-auto px-6 pt-6 text-zinc-500 mb-8 flex flex-wrap items-center">
-      <Link href="/" className="hover:text-zinc-800 transition-colors">
-        Home
+    <nav className="max-w-5xl mx-auto px-6 pt-8 pb-6 text-sm text-zinc-300 flex flex-wrap items-center gap-2">
+      <Link href="/" className="hover:text-emerald-400 transition-colors">
+        Início
       </Link>
 
       {path.map((item) => (
-        <div key={item.href} className="flex items-center">
-          <span className="mx-2 text-zinc-400">/</span>
+        <div key={item.href} className="flex items-center gap-2">
+          <span className="text-zinc-700">/</span>
+
           <Link
             href={item.href}
-            className="hover:text-zinc-800 transition-colors capitalize"
+            className="capitalize hover:text-emerald-400 transition-colors"
           >
             {item.label}
           </Link>

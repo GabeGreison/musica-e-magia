@@ -7,7 +7,6 @@ export default function Home() {
         <h1 className="text-5xl font-logo font-semibold tracking-tight mb-12 text-emerald-400">
           O Bardo ✦
         </h1>
-
         <div className="flex justify-center mb-12">
           <Image
             src="/bard.png"
@@ -18,7 +17,7 @@ export default function Home() {
             priority
           />
         </div>
-
+        z
         <p className="max-w-2xl mx-auto text-zinc-300 leading-relaxed text-lg">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
